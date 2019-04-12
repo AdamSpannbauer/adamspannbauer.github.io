@@ -13,17 +13,16 @@ In this post I'll be sharing a stateless chat bot built with [Rasa](https://rasa
 
 All the code used in the project can be found in [this github repo](https://github.com/AdamSpannbauer/app_rasa_chat_bot).
 
-<p align='center'>
-  <img src='https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/dash_demo2.gif?raw=true' height=250 border=1>
-</p>
+*****
+
+![Chat bot demo](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/dash_demo2.gif?raw=true){: .center-image width="50%" }
 
 ## The Process
 
 ### Some about Rasa
 
-<p align='center'>
-  <img src='https://github.com/RasaHQ.png' height=100 border=1>
-</p>
+
+![Rasa Logo](https://github.com/RasaHQ.png){: .center-image width="100px" }
 
 Rasa is a powerful open source framework for building conversational & independent chatbots.  The cornerstone concepts for making chatbots are intent classification, named entity recognition (NER), and state management.  In this project we'll leverage intent and NER, but the app rank bot will be stateless for simplicity.  In a real production chat bot, managing state is a must for your users to have a good experience.
 
@@ -33,9 +32,7 @@ Rasa has great [documentation](https://nlu.rasa.ai/), so we won't go too in dept
 
 Like any machine learning project, we need to start off with some training data.  This project was trained on the [Free](https://www.apple.com/itunes/charts/free-apps/), [Top Grossing](https://www.apple.com/itunes/charts/top-grossing-apps/), and [Paid](https://www.apple.com/itunes/charts/paid-apps/) categories for apps on the [iTunes Charts](https://www.apple.com/itunes/charts/).  To gather this data a [python script](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/utils/downloader.py) using BeautifulSoup was written.  The [results](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/data/app_chart_data.csv) were stored as a csv that contains columns for the app's name, genre, rank, and chart.  These 4 points of data will be our entity types in our NER model. 
 
-<p align='center'>
-  <img src='https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/itunes_charts.png?raw=true' width=75% border=1>
-</p>
+![Itunes Charts](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/itunes_charts.png?raw=true){: .center-image width="75%" }
 
 Now let's build up data for training our intent classifier.  Rasa provides some [example data](https://github.com/RasaHQ/rasa_nlu/blob/master/data/examples/rasa/demo-rasa.json) in their tutorial for building ['A simple restaurant search bot'](https://nlu.rasa.ai/tutorial.html#section-tutorial).  In the spirit of being ~~lazy~~ resourceful, let's use this example data has a starting point.  The provided data has some example phrases for the intents of `greet`, `affirm`, `restaurant_search`, & `goodbye`.  We'll keep all these, but change the labels for `restaurant_search` to `None` (I additionally added some random sentences from [Wikipedia](https://www.wikipedia.org/) to the `None` class).  The resulting generic dataset can be found [here](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/data/generic_rasa_train_data.json).
 
@@ -163,6 +160,4 @@ while True:
   print('BOT: {}\n'.format('\n'.join(response)))
 ```
 
-<p align='center'>
-  <img src='https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/example.gif?raw=true' height=250 border=1>
-</p> 
+![Chat bot CLI demo](https://github.com/AdamSpannbauer/app_rasa_chat_bot/blob/master/readme/example.gif?raw=true){: .center-image width="80%" }
