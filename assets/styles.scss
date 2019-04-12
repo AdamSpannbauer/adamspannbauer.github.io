@@ -54,7 +54,7 @@ img {
     display: block;
 }
 
-a {
+.article a {
   color: #0b117c;
   text-decoration: underline;
   text-decoration-color: #0b117c;
@@ -71,10 +71,10 @@ code {
   color: #d0d0d0;
 }
 
-a:hover {
+.article a:hover {
   background-color: yellow;
 }
 
-a code:hover {
+.article a code:hover {
   background-color: yellow;
 }
