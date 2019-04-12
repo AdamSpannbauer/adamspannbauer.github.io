@@ -42,3 +42,14 @@
 .min-height-full {
   min-height: 100vh;
 }
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.center-image {
+    margin: 0 auto;
+    display: block;
+}
