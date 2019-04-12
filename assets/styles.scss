@@ -53,3 +53,28 @@ img {
     margin: 0 auto;
     display: block;
 }
+
+a {
+  color: #0b117c;
+  text-decoration: underline;
+  text-decoration-color: #0b117c;
+}
+
+p code {
+  color: #2e510f;
+  background-color: #e8e8e8;
+  border-radius: 1px;
+  padding: 2px;
+}
+
+code {
+  color: #d0d0d0;
+}
+
+a:hover {
+  background-color: yellow;
+}
+
+a code:hover {
+  background-color: yellow;
+}
