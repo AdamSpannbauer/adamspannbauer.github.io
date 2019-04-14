@@ -17,11 +17,11 @@
   {% assign page_title = user.name %}
   {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
 {% endif %}
-
 <!doctype html>
 <html class="min-height-full">
   <head>
     {% include google_analytics.html %}
+    <link rel="shortcut icon" href="favicon.ico" />
     <meta charset="utf-8">
     <title>{{ page_title }}</title>
     <meta name="description" content="{{ meta_description }}" />
