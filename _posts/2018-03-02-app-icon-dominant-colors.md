@@ -12,7 +12,7 @@ This post is about finding an image's *dominant color*. To illustrate
 this concept we'll be working with app icons from the Apple App Store.
 Why do we care about an images dominant color? A couple of uses we'll go
 over are sorting images in a collage and [automatically making
-appropriate color selections in plots](#plot).
+appropriate color selections in plots](#applications-of-dominant-color).
 
 ![](https://raw.githubusercontent.com/AdamSpannbauer/iphone_app_icon/master/readme/sorted_app_icons.jpg){: .center-image width="95%" }
 
